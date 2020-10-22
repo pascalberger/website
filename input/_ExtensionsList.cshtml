@@ -18,12 +18,33 @@
         <div id="result-count" class="col-md-10 no-padding">
             @Model.Count() extensions found
         </div>
+        <div class="col-md-2 col-xs-3 col-sm-1 text-right no-padding">
+            <button class="btn-filter" data-toggle="collapse" data-target="#extension-filter" aria-expanded="false" aria-controls="extension-filter">
+                <i class="fa fa-filter"></i>
+                Filter
+            </button>
+        </div>
+    </div>
+
+    <div class="panel panel-default collapse" id="extension-filter">
+        <div class="row panel-body">
+            <div class="col-md-2">
+                Type:
+            </div>
+            <div class="col-md-10">
+                <a class="filter btn btn-light mb-2" href="javascript:void(0)" data-filter="">All</a>
+                <a class="filter btn btn-light mb-2" href="javascript:void(0)" data-filter="">Addins</a>
+                <a class="filter btn btn-light mb-2" href="javascript:void(0)" data-filter="">Modules</a>
+                <a class="filter btn btn-light mb-2" href="javascript:void(0)" data-filter="">Recipes</a>
+            </div>
+        </div>
     </div>
 
     <div class="list-extensions list" role="list">
 
     @foreach(IDocument addin in Model.OrderBy(d => d.String("Name")))
     {
+        string type = addin.String("Type");
         string name = addin.String("Name");
         string description = addin.String("Description");
         string author = addin.String("Author");
@@ -31,7 +52,7 @@
         string version = addin.String("Version");
         string categories = (String.Join(", ", addin.List<string>("Categories")));
 
-        <article class="extension row" data-name="@name" data-categories="@categories">
+        <article class="extension row" data-type="@type" data-name="@name" data-categories="@categories">
             <div class="col-sm-1 hidden-xs hidden-sm col-package-icon">
                 <i class="fa fa-puzzle-piece fa-4x"></i>
             </div>
