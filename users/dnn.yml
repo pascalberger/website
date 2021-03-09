@@ -1,0 +1,5 @@
+Category: Open Source Projects
+ProjectName: DNN (formerly DotNetNuke)
+ProjectUrl: https://www.dnnsoftware.com/
+BuildUrls:
+  - https://github.com/dnnsoftware/Dnn.Platform/tree/develop/Build

@@ -1,0 +1,5 @@
+Category: Open Source Projects
+ProjectName: MahApps
+ProjectUrl: https://mahapps.com
+BuildUrls:
+  - https://github.com/MahApps/MahApps.Metro/blob/develop/build.cake

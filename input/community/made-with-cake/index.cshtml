@@ -1,0 +1,20 @@
+---
+Order: 40
+Title: Made With Cake
+Description: Companies and projects using Cake
+---
+
+<p>
+Cake is widely used as build automation tool in enterprises and open source projects.
+</p>
+
+<ul>
+@foreach(IDocument user in Documents["Users"].OrderBy(x => x.String("Category")))
+{
+    string category = user.String("Category");
+    string projectName = user.String("ProjectName");
+    string projectUrl = user.String("ProjectUrl");
+
+    <li>@projectName</li>
+}
+</ul>

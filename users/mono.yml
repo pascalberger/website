@@ -1,0 +1,6 @@
+Category: Open Source Projects
+ProjectName: Mono
+ProjectUrl: http://mono-project.com/
+BuildUrls:
+  - https://github.com/mono/SkiaSharp/blob/main/build.cake
+  - https://github.com/mono/Embeddinator-4000/blob/main/build.cake

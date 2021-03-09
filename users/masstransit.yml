@@ -1,0 +1,5 @@
+Category: Open Source Projects
+ProjectName: MassTransit
+ProjectUrl: http://masstransit-project.com/
+BuildUrls:
+  - https://github.com/MassTransit/MassTransit/blob/develop/build.cake

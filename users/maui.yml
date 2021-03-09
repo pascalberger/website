@@ -1,0 +1,5 @@
+Category: Microsoft
+ProjectName: .NET MAUI
+ProjectUrl: https://github.com/dotnet/maui
+BuildUrls:
+  - https://github.com/dotnet/maui/blob/main/build.cake

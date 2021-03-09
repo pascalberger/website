@@ -1,0 +1,5 @@
+Category: Companies
+ProjectName: Octopus Deploy
+ProjectUrl: https://octopus.com
+BuildUrls:
+  - https://github.com/search?q=org%3AOctopusDeploy+extension%3Acake

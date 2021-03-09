@@ -1,0 +1,5 @@
+Category: Open Source Projects
+ProjectName: CruiseControl.NET
+ProjectUrl: http://www.cruisecontrolnet.org/
+BuildUrls:
+  - https://github.com/ccnet/CruiseControl.NET/blob/master/build.cake

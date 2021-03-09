@@ -1,0 +1,5 @@
+Category: GitHub
+ProjectName: Octokit
+ProjectUrl: https://octokitnet.readthedocs.io
+BuildUrls:
+  - https://github.com/octokit/octokit.net/tree/main/build

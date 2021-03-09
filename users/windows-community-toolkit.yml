@@ -1,0 +1,5 @@
+Category: Open Source Projects
+ProjectName: Windows Community Toolkit
+ProjectUrl: https://docs.microsoft.com/en-us/windows/communitytoolkit/
+BuildUrls:
+  - https://github.com/windows-toolkit/Graph-Controls/blob/main/build/build.cake

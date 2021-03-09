@@ -38,6 +38,12 @@ Pipelines.InsertBefore(Docs.Code, "Extensions",
     Meta(DocsKeys.NoSidebar, true)
 );
 
+// Reads users metadata
+Pipelines.InsertBefore(Docs.Code, "Users",
+    ReadFiles("../users/*.yml"),
+    Yaml()
+);
+
 // Read all classes containing aliases from API documentation
 Pipelines.InsertAfter(Docs.Api, "Aliases",
     Documents(Docs.Api),

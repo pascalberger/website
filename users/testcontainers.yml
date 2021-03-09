@@ -1,0 +1,5 @@
+Category: Open Source Projects
+ProjectName: testcontainers
+ProjectUrl: https://testcontainers.org/
+BuildUrls:
+  - https://github.com/testcontainers/testcontainers-dotnet/blob/develop/build.cake

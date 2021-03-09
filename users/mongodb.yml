@@ -1,0 +1,5 @@
+Category: Companies
+ProjectName: MongoDB Inc.
+ProjectUrl: https://www.mongodb.com
+BuildUrls:
+  - https://github.com/mongodb/mongo-csharp-driver/blob/master/build.cake

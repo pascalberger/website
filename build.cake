@@ -65,9 +65,18 @@ class ExtensionSpec
     public List<string> ComplianceNotes { get; set; }
 }
 
+class UserSpec
+{
+    public string Category { get; set; }
+    public string ProjectName { get; set; }
+    public string ProjectUrl { get; set; }
+    public List<string> BuildUrls { get; set; }
+}
+
 // Variables
 List<MaintainerSpec> maintainerSpecs = new List<MaintainerSpec>();
 List<ExtensionSpec> extensionSpecs = new List<ExtensionSpec>();
+List<UserSpec> userSpecs = new List<UserSpec>();
 List<string> assemblies = new List<string>();
 
 //////////////////////////////////////////////////////////////////////
@@ -157,6 +166,20 @@ Task("GetMaintainerSpecs")
         );
 });
 
+Task("GetUserSpecs")
+    .Does(() =>
+{
+    var userSpecFiles = GetFiles("./users/*.yml");
+    userSpecs
+        .AddRange(userSpecFiles
+            .Select(x =>
+            {
+                Verbose("Deserializing user YAML from " + x);
+                return DeserializeYamlFromFile<UserSpec>(x);
+            })
+        );
+});
+
 Task("GetExtensionSpecs")
     .Does(() =>
 {
@@ -227,6 +250,7 @@ Task("Build")
 Task("Preview")
     .IsDependentOn("GetMaintainerSpecs")
     .IsDependentOn("GetExtensionSpecs")
+    .IsDependentOn("GetUserSpecs")
     .Does(context =>
     {
         var releaseInfo = context.GetCakeGitHubReleaseInfo(releaseDir);
@@ -308,7 +332,8 @@ Task("Default")
 Task("GetArtifacts")
     .IsDependentOn("GetSource")
     .IsDependentOn("GetMaintainerSpecs")
-    .IsDependentOn("GetExtensionPackages");
+    .IsDependentOn("GetExtensionPackages")
+    .IsDependentOn("GetUserSpecs");
 
 Task("AppVeyor")
     .IsDependentOn("Build");
